@@ -5,5 +5,6 @@ This tool helps you maintain your API documentation effortlessly by generating i
 
 # Usage
 ```bash
-python bruno_to_markdown.py /path/to/your/bruno-collection
+git clone https://github.com/nukhes/bruno-docs.git
+python bruno-docs/src/main.py /path/to/your/bruno-collection
 ```
