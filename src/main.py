@@ -13,7 +13,6 @@ from pathlib import Path
 #
 # Usage:
 # python bruno_to_markdown.py /path/to/your/bruno/collection -o /path/to/output/docs
-
 def parse_bru_file(file_path: Path) -> dict | None:
 	"""
 	Parses a single .bru file to extract relevant API request information.
@@ -49,7 +48,7 @@ def parse_bru_file(file_path: Path) -> dict | None:
 
 		method = method_match.group(1).upper()
 		method_content = method_match.group(2)
-		url_match = re.search(r'url:\s*(.*)', method_content)
+		url_match = re.search(r'^url:\s*(.+)$', method_content, re.MULTILINE)
 
 		# --- Parse various parameter blocks ---
 		def parse_params_block(block_name: str, text: str) -> dict:
